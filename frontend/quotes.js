@@ -7,7 +7,6 @@ const checkbox = document.getElementById("auto-gen-option");
 const checkboxLabel = document.querySelector("label");
 
 const BACKEND_URL = "http://localhost:3000";
-let interval = null;
 
 async function fetchQuote() {
     try {
@@ -20,3 +19,7 @@ async function fetchQuote() {
         quoteSpace.textContent = "Failed to fetch quote";
     }
 }
+
+newQuoteButton.addEventListener("click", fetchQuote);
+
+fetchQuote();
