@@ -6,7 +6,7 @@ const newQuoteButton = document.getElementById("new-quote");
 const checkbox = document.getElementById("auto-gen-option");
 const checkboxLabel = document.querySelector("label");
 
-const BACKEND_URL = "http://localhost:3000";
+const BACKEND_URL = "http://a10716iih3xfrabivastbaju.178.105.39.91.sslip.io";
 
 async function fetchQuote() {
     try {
