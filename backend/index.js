@@ -37,10 +37,13 @@ app.get("/", (req, res) => {
 
 // POST, to add a new quote
 app.post("/", (req, res) => {
-  const { quote, author } = req.body;
+  let { quote, author } = req.body;
+
+  if (typeof quote === "string") quote = quote.trim();
+  if (typeof author === "string") author = author.trim();
   
   if (!quote || !author) {
-    return res.status(400).send("Missing quote or author");
+    return res.status(400).send("Quote and author must not be empty or only spaces.");
   }
   
   quotes.push({ quote, author });
